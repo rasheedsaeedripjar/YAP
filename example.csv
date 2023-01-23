@@ -1,0 +1,4 @@
+title,state,url
+This is an example, present, https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerConfigCustomResourceDefinition.yaml
+Goodbye my friend, present, https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerConfigCustomResourceDefinition.yaml
+This will not work, present, https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerConfigCustomResourceDefinition.yaml
