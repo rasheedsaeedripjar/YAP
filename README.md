@@ -1,5 +1,5 @@
  # YAP (YAML to Ansible Playbook)
-This script takes one or more YAML files (*currently only supporting urls*) and inserts them into a targeted ansible playbook file.  
+This script takes one or more Kubernetes YAML files (*currently only supporting urls*) and inserts them into a targeted ansible playbook file.  
 
 ## Motivation
 When wanting to use existing YAML files, for example the <a href=’https://github.com/prometheus-operator/prometheus-operator’>Prometheus-operator</a>, there is tremendous pain (and error) copying and pasting these templates into existing playbooks. This script therefore intends to mitigate this pain. 
