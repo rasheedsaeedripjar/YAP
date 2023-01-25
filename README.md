@@ -7,7 +7,7 @@ When wanting to use existing YAML files, for example the <a href=’https://gith
 ### Notes: 
 
 - Only YAML files are supported from a server. URLS must end in a .yaml or .yml.
-- Currently, the only supported ansible state is *present*. You can add more in the validate_ansible_kind_state function. 
+- Currently, the only supported ansible king state is *present*. You can add more in the validate_ansible_kind_state function. 
 
 ### How to
 The script is ran via the CLI. There are currently three supported options using these flags:

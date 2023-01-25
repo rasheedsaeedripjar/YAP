@@ -22,11 +22,11 @@ def insert_newline(file: TextIO, amount=1) -> None:
 
 def insert_spaces(amount: int, text: str) -> str:
     """YAML files use spaces rather than tabs, despite using the tab key when working
-    with them.
+    with them. 
 
     Args:
-        amount (_type_):
-        text (_type_): The text we want to insert after the space.
+        amount (int):
+        text (text): The text we want to insert after the space.
 
     Returns:
         str:
@@ -82,6 +82,14 @@ def validate_file(file: str):
 
 
 def validate_ansible_kind_state(state: str):
+    """Validates the state... 
+
+    Args:
+        state (str): 
+
+    Raises:
+        ValueError: If the state is not our tuple...
+    """
     if state not in ("present",):
         raise ValueError("Not a valid ansible state! Passed state:", {state})
 
