@@ -14,7 +14,7 @@ def insert_newline(file: TextIO, amount=1) -> None:
     """Inserts a newline into a file.
 
     Args:
-        file (str): The opened file. 
+        file (str): The opened file.
         amount (int, optional): How many new lines we want inserted.
     """
     file.write("\n" * amount)
@@ -22,7 +22,7 @@ def insert_newline(file: TextIO, amount=1) -> None:
 
 def insert_spaces(amount: int, text: str) -> str:
     """YAML files use spaces rather than tabs, despite using the tab key when working
-    with them. 
+    with them.
 
     Args:
         amount (int):
@@ -82,10 +82,10 @@ def validate_file(file: str):
 
 
 def validate_ansible_kind_state(state: str):
-    """Validates the state... 
+    """Validates the state...
 
     Args:
-        state (str): 
+        state (str):
 
     Raises:
         ValueError: If the state is not our tuple...
@@ -127,7 +127,7 @@ def add_yaml_to_file(
     yaml: str,
     ansible_state: str = "",
     playbook_title: str = "",
-    escape_brackets=False,
+    escape_brackets: bool = False,
 ):
     """Adds the yaml to the targeted ansible playbook file.
 
@@ -212,7 +212,7 @@ def parse_url_big(file: str, url: str, delimiter="---"):
     validate_file(file)
     validate_url(url)
 
-    yamls = []
+    yamls: List[str] = []
     string = ""
     for line in fetch(url).split("\n"):
         if line == delimiter:
@@ -243,7 +243,7 @@ def parse_file(ansbile_playbook_file: str, csv_file: str):
     validate_file(ansbile_playbook_file)
     validate_file(csv_file)
 
-    targets = []
+    targets: List[str] = []
     with open(csv_file) as file:
         reader = DictReader(file)
         for row in reader:
@@ -260,7 +260,6 @@ def parse_file(ansbile_playbook_file: str, csv_file: str):
             yaml = fetch(remove_all_whitespace(target["url"]))
         except HTTPError:
             raise Exception(f"Unable to fetch yaml data for '{target['title']}'.")
-
         add_yaml_to_file(ansbile_playbook_file, yaml, target["state"], target["title"])
 
 
@@ -269,7 +268,6 @@ def parse_file(ansbile_playbook_file: str, csv_file: str):
 #
 def main(arguments):
     # -f is the flag used to indicate to look at a .csv file
-    print(len(arguments))
     if len(arguments) != 4:
         raise ValueError(
             "There should only be an ansible playbook target, a flag, and the target for the flag... bruh."
