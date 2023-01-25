@@ -16,7 +16,7 @@ The script is ran via the CLI. There are currently three supported options using
 - *--url-alot*: Looks at a URL with multiple configs. They will be split using a delimiter (default "---"). The default title will be when it was discovered from the script (e.g., Config number 1, Config number 2, Config number *n*, ...) and the default state is present. This one requires cleaning after fetching.
 - *--csv-file*: This method fetches one or more yaml files (which each have a single config) along with their desired title and state from a CSV. 
 
-**CLI:**
+**CLI:** <br />
 ```python3 yap.py target.yml --url https://raw.githubusercontent.com/prometheus-operator/kube-prometheus/main/manifests/setup/0alertmanagerConfigCustomResourceDefinition.yaml```
 
 ```python3 yap.py /Users/rasaeed/Documents/GitHub/YAP/target.yml --url-big https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/master/bundle.yaml```
