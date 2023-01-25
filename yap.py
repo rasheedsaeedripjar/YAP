@@ -5,15 +5,16 @@ from pathlib import Path
 from csv import DictReader
 import re
 
+from typing import List, TextIO
+
 #
 # Utils
 #
-# TODO: Typehint for file arg
-def insert_newline(file, amount=1) -> None:
+def insert_newline(file: TextIO, amount=1) -> None:
     """Inserts a newline into a file.
 
     Args:
-        file (str): Absolute filepath.
+        file (str): The opened file. 
         amount (int, optional): How many new lines we want inserted.
     """
     file.write("\n" * amount)
