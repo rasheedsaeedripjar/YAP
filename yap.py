@@ -100,7 +100,7 @@ def validate_ansible_kind_state(state: str):
 def fetch(url) -> str:
     """Fetches the text from a url.
 
-    I know you peeps like JavaScript so this should feel natural.
+    I know you peeps like JavaScript so this should feel more natural.
     It's not async though as I wrote this as 6am so I'm not
     feeling too generous.
 
@@ -136,8 +136,8 @@ def add_yaml_to_file(
         yaml (str): Contents of a single YAML.
         ansible_state (str, optional): The state we wish to make this. Defaults to ''.
         playbook_title (str, optional): The title you wish to appear. Defaults to ''.
-        escape_brackets (bool, optional): If the YAML contains any {{ of this }}, you may want t
-        tell ansible not to process this. Setting this to false wraps {% raw %} and {% endraw %}. Defaults to False.
+        escape_brackets (bool, optional): If the YAML contains any {{ of this }}, you may want to
+        tell ansible not to process this. Setting this to True wraps {% raw %} and {% endraw %} around them. Defaults to False.
     """
 
     if not playbook_title:
@@ -178,7 +178,7 @@ def add_yaml_to_file(
 # Parse
 #
 def parse_url(file: str, url: str):
-    """Fetches the contents from a remote server and inserts contents into the target file.
+    """Fetches the contents from a URL and inserts contents into the target file.
 
     Args:
         file (str): Absolute filepath.
@@ -201,7 +201,7 @@ def parse_url(file: str, url: str):
 
 
 def parse_url_big(file: str, url: str, delimiter="---"):
-    """Fetches the contents from a remote server and inserts contents into the target file.
+    """Fetches the contents from a URL and inserts contents into the target file.
     Splits each config from the provided delimiter. Each seperate config will be given the name
     'Config number {n}'...
 
@@ -225,7 +225,6 @@ def parse_url_big(file: str, url: str, delimiter="---"):
     # Add the remaining data
     yamls.append(string)
 
-    print(len(yamls))
     for config_number, yaml in enumerate(yamls):
         add_yaml_to_file(
             file, yaml, "present", f"Discovered config number {config_number}"
